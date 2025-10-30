@@ -39,7 +39,21 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/card_trader-e2e/**/*"]
+      "exclude": [
+        "apps/card_trader-e2e/**/*",
+        "apps/cards/fab-e2e/**/*",
+        "apps/cards/mtg-e2e/**/*",
+        "apps/api-gateway-e2e/**/*",
+        "apps/user-e2e/**/*",
+        "apps/api-gateway-e2e/**/*"
+      ]
     }
-  ]
+  ],
+  "targetDefaults": {
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    }
+  }
 }
