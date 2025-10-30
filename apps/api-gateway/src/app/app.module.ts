@@ -11,15 +11,16 @@ import { MtgController } from './controllers/cards/mtg.controller';
       envFilePath: '.env',
     }),
     ClientsModule.register([
+      
       {
-        name:'FAB_MICROSERVICE',
+        name: process.env.FAB_MICROSERVICE_NAME,
         transport: Transport.TCP,
         options: {
           port: parseInt(process.env.FAB_MICROSERVICE_PORT)
         }
       },
       {
-        name:'MTG_MICROSERVICE',
+        name: process.env.MTG_MICROSERVICE_NAME,
         transport: Transport.TCP,
         options: {
           port: parseInt(process.env.MTG_MICROSERVICE_PORT)
